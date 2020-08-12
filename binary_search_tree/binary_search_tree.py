@@ -16,17 +16,41 @@ class BSTNode:
         self.right = None
 
     # Insert the given value into the tree
+
     def insert(self, value):
-        pass
+        if (value < self.value):
+            if (self.left != None):
+                insert(self.left, value)
+            else:
+                self.left = BSTNode(value)
+        else:
+            if (self.right != None):
+                insert(self.right, value)
+            else:
+                self.right = BSTNode(value)
+
 
     # Return True if the tree contains the value
     # False if it does not
     def contains(self, target):
-        pass
+        if self.value == target:
+            return True
+        elif self.value < target:
+            if self.right == None:
+                return False
+            else:
+                return BSTNode.contains(self.right, target)
+        else:
+            if self.left == None:
+                return False
+            else:
+                return BSTNode.contains(self.left, target)
 
     # Return the maximum value found in the tree
     def get_max(self):
-        pass
+        while(self.right):
+            self = self.right
+        return self.value
 
     # Call the function `fn` on the value of each node
     def for_each(self, fn):
@@ -63,23 +87,23 @@ class BSTNode:
 """
 This code is necessary for testing the `print` methods
 """
-bst = BinarySearchTree(1)
+# bst = BinarySearchTree(1)
 
-bst.insert(8)
-bst.insert(5)
-bst.insert(7)
-bst.insert(6)
-bst.insert(3)
-bst.insert(4)
-bst.insert(2)
+# bst.insert(8)
+# bst.insert(5)
+# bst.insert(7)
+# bst.insert(6)
+# bst.insert(3)
+# bst.insert(4)
+# bst.insert(2)
 
-bst.bft_print()
-bst.dft_print()
+# bst.bft_print()
+# bst.dft_print()
 
-print("elegant methods")
-print("pre order")
-bst.pre_order_dft()
-print("in order")
-bst.in_order_dft()
-print("post order")
-bst.post_order_dft()  
+# print("elegant methods")
+# print("pre order")
+# bst.pre_order_dft()
+# print("in order")
+# bst.in_order_dft()
+# print("post order")
+# bst.post_order_dft()  
