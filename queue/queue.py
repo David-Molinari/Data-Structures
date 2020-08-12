@@ -33,3 +33,21 @@ class Queue:
         if self.size != 0:
             self.size = self.size - 1
             return self.storage.remove_head()
+
+# class Queue:
+#     def __init__(self):
+#         self.size = 0
+#         self.storage = []
+    
+#     def __len__(self):
+#         return self.size
+
+#     def enqueue(self, value):
+#         if value != None:
+#             self.storage.append(value)
+#             self.size = self.size + 1
+
+#     def dequeue(self):
+#         if self.size != 0:
+#             self.size = self.size - 1
+#             return self.storage.pop(0)
