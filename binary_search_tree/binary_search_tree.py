@@ -20,12 +20,12 @@ class BSTNode:
     def insert(self, value):
         if (value < self.value):
             if (self.left != None):
-                insert(self.left, value)
+                self.left.insert(value)
             else:
                 self.left = BSTNode(value)
         else:
             if (self.right != None):
-                insert(self.right, value)
+                self.right.insert(value)
             else:
                 self.right = BSTNode(value)
 
